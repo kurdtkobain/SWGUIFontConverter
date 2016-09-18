@@ -1,0 +1,11 @@
+*.suo
+*.user
+
+.vs
+releases
+packages
+bin
+obj
+NDependOut
+push.cmd
+
