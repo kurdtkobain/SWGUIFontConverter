@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWGUIFontConverter", "uifontconverter\SWGUIFontConverter.csproj", "{C6BAA5F9-CE75-4C33-BD40-F372FE7C5A4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWGUITextStyleGenerator", "SWGUITextStyleGenerator\SWGUITextStyleGenerator.csproj", "{14F3715A-77B6-4B39-A663-10FB1FA5E4C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{C6BAA5F9-CE75-4C33-BD40-F372FE7C5A4E}.Release|x64.Build.0 = Release|x64
 		{C6BAA5F9-CE75-4C33-BD40-F372FE7C5A4E}.Release|x86.ActiveCfg = Release|x86
 		{C6BAA5F9-CE75-4C33-BD40-F372FE7C5A4E}.Release|x86.Build.0 = Release|x86
+		{14F3715A-77B6-4B39-A663-10FB1FA5E4C1}.Debug|x64.ActiveCfg = Debug|x64
+		{14F3715A-77B6-4B39-A663-10FB1FA5E4C1}.Debug|x64.Build.0 = Debug|x64
+		{14F3715A-77B6-4B39-A663-10FB1FA5E4C1}.Debug|x86.ActiveCfg = Debug|x86
+		{14F3715A-77B6-4B39-A663-10FB1FA5E4C1}.Debug|x86.Build.0 = Debug|x86
+		{14F3715A-77B6-4B39-A663-10FB1FA5E4C1}.Release|x64.ActiveCfg = Release|x64
+		{14F3715A-77B6-4B39-A663-10FB1FA5E4C1}.Release|x64.Build.0 = Release|x64
+		{14F3715A-77B6-4B39-A663-10FB1FA5E4C1}.Release|x86.ActiveCfg = Release|x86
+		{14F3715A-77B6-4B39-A663-10FB1FA5E4C1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
