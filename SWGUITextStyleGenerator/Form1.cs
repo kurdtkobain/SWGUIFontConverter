@@ -69,7 +69,7 @@ namespace SWGUITextStyleGenerator
             sb.Append("Fonts_" + textBox1.Text + "='");
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
-                if (r.Cells[0].Value != null && r.Cells[0].Value != " " && r.Cells[0].Value != "")
+                if (r.Cells[0].Value != null && r.Cells[0].Value.ToString() != " " && r.Cells[0].Value.ToString() != "")
                 {
                     sb.Append("font/" + textBox1.Text + "/" + r.Cells[0].Value + ".inc\n");
                 }
