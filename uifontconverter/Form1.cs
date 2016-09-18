@@ -48,9 +48,9 @@ namespace SWGUIFontConverter
             string tmpname = bmf.FamilyName.ToLower();
             if (bmf.Bold)
             {
-                tmpname = bmf.FamilyName.ToLower()+"_bold"
+                tmpname = bmf.FamilyName.ToLower()+"_bold";
             }else if(bmf.Italic){
-                tmpname = bmf.FamilyName.ToLower()+"_italic"
+                tmpname = bmf.FamilyName.ToLower() + "_italic";
             }
             sb.Append("<textstyle name='" + tmpname + "_" + bmf.FontSize + "' leading='" + bmf.FontSize + "'>\n");
             foreach (Character o in bmf.Characters.Values)
