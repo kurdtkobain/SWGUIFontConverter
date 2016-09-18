@@ -55,7 +55,7 @@ namespace SWGUIFontConverter
             sb.Append("<textstyle name='" + tmpname + "_" + bmf.FontSize + "' leading='" + bmf.FontSize + "'>\n");
             foreach (Character o in bmf.Characters.Values)
             {
-                sb.Append("<fontcharacter name=" + o.id.ToString("X4") + " code=" + o.id + " advancePre="+o.Offset.X+" advance=" + o.XAdvance + " sourcefile='font/" + bmf.FamilyName.ToLower() + "_" + bmf.FontSize + "_" + o.TexturePage.ToString("D2") + "' sourcerect='" + o.Bounds.Left + "," + o.Bounds.Top + "," + o.Bounds.Right + "," + o.Bounds.Bottom + "'/>\n");
+                sb.Append("<fontcharacter name=" + ((int)o.Char).ToString("x4") + " code=" + (int)o.Char + " advancePre=" + o.Offset.X + " advance=" + o.XAdvance + " sourcefile='font/" + tmpname + "_" + bmf.FontSize + "_" + o.TexturePage.ToString("D2") + "' sourcerect='" + o.Bounds.Left + "," + o.Bounds.Top + "," + o.Bounds.Right + "," + o.Bounds.Bottom + "'/>\n");
             }
             sb.Append("</textstyle>");
             System.IO.StreamWriter file = new System.IO.StreamWriter(textBox2.Text);
