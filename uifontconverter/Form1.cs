@@ -45,7 +45,14 @@ namespace SWGUIFontConverter
         {
             BitmapFont bmf = BitmapFontLoader.LoadFontFromFile(textBox1.Text);
             StringBuilder sb = new StringBuilder();
-            sb.Append("<textstyle name='" + bmf.FamilyName.ToLower() + "_" + bmf.FontSize + "' leading='" + bmf.FontSize + "'>\n");
+            string tmpname = bmf.FamilyName.ToLower();
+            if (bmf.Bold)
+            {
+                tmpname = bmf.FamilyName+"_bold"
+            }else if(bmf.Italic){
+                tmpname = bmf.FamilyName+"_italic"
+            }
+            sb.Append("<textstyle name='" + tmpname + "_" + bmf.FontSize + "' leading='" + bmf.FontSize + "'>\n");
             foreach (Character o in bmf.Characters.Values)
             {
                 sb.Append("<fontcharacter name=" + o.id.ToString("X4") + " code=" + o.id + " advancePre="+o.Offset.X+" advance=" + o.XAdvance + " sourcefile='font/" + bmf.FamilyName.ToLower() + "_" + bmf.FontSize + "_" + o.TexturePage.ToString("D2") + "' sourcerect='" + o.Bounds.Left + "," + o.Bounds.Top + "," + o.Bounds.Right + "," + o.Bounds.Bottom + "'/>\n");
