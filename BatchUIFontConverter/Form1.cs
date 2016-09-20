@@ -48,7 +48,7 @@ namespace BatchUIFontConverter
 
         private void button3_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow r in dataGridView1.Rows)
+            foreach (DataGridViewRow r in dataGridView1.Rows)
             {
                 if (r.Cells[0].Value != null && r.Cells[0].Value.ToString() != " " && r.Cells[0].Value.ToString() != "")
                 {
@@ -74,10 +74,23 @@ namespace BatchUIFontConverter
             sb.Append("<textstyle name='" + tmpname + "_" + bmf.FontSize + "' leading='" + bmf.FontSize + "'>\n");
             foreach (Character o in bmf.Characters.Values)
             {
-                sb.Append("<fontcharacter name=" + ((int)o.Char).ToString("x4") + " code=" + (int)o.Char + " advancePre=" + o.Offset.X + " advance=" + o.XAdvance + " sourcefile='font/" + tmpname + "_" + bmf.FontSize + "_" + o.TexturePage.ToString("D2") + "' sourcerect='" + o.Bounds.Left + "," + o.Bounds.Top + "," + o.Bounds.Right + "," + o.Bounds.Bottom + "'/>\n");
+                sb.Append("<fontcharacter name=" + ((int)o.Char).ToString("x4") + " code=" + (int)o.Char + " advancePre=" + o.Offset.X + " advance=" + o.XAdvance + " sourcefile='font/" + tmpname + "_" + bmf.FontSize + "_");
+                if ((bmf.Pages.Count() - 1) >= 100)
+                {
+                    sb.Append(o.TexturePage.ToString("D3"));
+                }
+                else if ((bmf.Pages.Count() - 1) >= 10)
+                {
+                    sb.Append(o.TexturePage.ToString("D2"));
+                }
+                else if ((bmf.Pages.Count() - 1) <= 9)
+                {
+                    sb.Append(o.TexturePage.ToString("D1"));
+                }
+                sb.Append("' sourcerect='" + o.Bounds.Left + "," + o.Bounds.Top + "," + o.Bounds.Right + "," + o.Bounds.Bottom + "'/>\n");
             }
             sb.Append("</textstyle>");
-            System.IO.StreamWriter file = new System.IO.StreamWriter(textBox1.Text+"/"+Path.GetFileNameWithoutExtension(inFile)+".inc");
+            System.IO.StreamWriter file = new System.IO.StreamWriter(textBox1.Text + "/" + Path.GetFileNameWithoutExtension(inFile) + ".inc");
             file.Write(sb.ToString());
             file.Close();
         }
